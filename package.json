@@ -1,0 +1,27 @@
+{
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "latest",
+		"autoprefixer": "^10.4.19",
+		"daisyui": "^4.11.1",
+		"postcss": "^8.4.38",
+		"postcss-cli": "^11.0.0",
+		"prettier": "^3.2.5",
+		"prettier-plugin-tailwindcss": "^0.5.14",
+		"tailwindcss": "^3.4.3"
+	},
+	"watch": {
+		"build:tailwindcss": {
+			"patterns": [
+				"static/**/*.{html,ts}",
+				"templates/**/*.{html,ts}"
+			],
+			"extensions": "html,ts",
+			"quiet": false
+		}
+	},
+	"scripts": {
+		"build:css": "postcss ./static/main.css -o ./static/style.css",
+		"watch:css": "bun run build:css --watch"
+	}
+}
